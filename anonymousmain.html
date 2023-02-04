@@ -4,20 +4,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
     <title>Knighter</title>
 </head>
 
 <body>
     <div>
-        <h2>Knigther</h2>
+      <!-- SPACE FOR THE NAVBAR  -->
+    </div>  
+    <!-- Publish new twitter (knighter) - Only if the user is loggin   -->
+    <div id="knighter-form">
+      <textarea id="knighter-input" placeholder="What's happening ?"></textarea>
+      <br>
+      <button id="knighter-button">Knighther</button>
     </div>
-    <div class="container">
+    <!-- wall of most recent knighters published  -->
+        <div id="knightersWall">
+              <h2>KNIGHTER WALL</h2>
+              <ul id="knighter-list">
+              </ul>
+        </div>
+  
+       
        
     </div>
     <footer class="bottom">FOOTER
 
         <br><br>
     </footer>
+    <script src="main.js"></script>
 </body>
 
 </html>
