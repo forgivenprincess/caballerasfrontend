@@ -4,7 +4,7 @@ const knighterButton = document.getElementById("knighter-button");
 const knighterInput = document.getElementById("knighter-input");
 const knighterList= document.getElementById("knighter-list");
 
-let isLoggedIn = false; // variable to indicate if the user is logged in or not 
+let isLoggedIn = true; // variable to indicate if the user is logged in or not 
 
 
 //function to update the login season variable
@@ -28,16 +28,27 @@ knighterButton.addEventListener("click", function(){
     <h3>Username here</h3>
   </div>
   <p class="knighter-text">${knighter}</p>
-  <button class="like-button">HONOR</button>
+  <button class="honor-button">Honor</button>
+  <span class="honor-count">0</span>
 `;
   knighterList.prepend(li);
 })
 
-//like for the knighters
+//like (honor) for the knighters
 
 knighterList.addEventListener("click", function(event) {
   if (event.target.className === "honor-button") {
-    event.target.innerHTML = "Honor!";
+    const knighter = event.target.parentNode.parentNode;
+    const honorCount = knighter.querySelector(".honor-count");
+    let count = parseInt(honorCount.innerHTML);
+    if (event.target.innerHTML === "Honor") {
+      count++;
+      event.target.innerHTML = "HONOR!";
+    } else {
+      count--;
+      event.target.innerHTML = "Honor";
+    }
+    honorCount.innerHTML = count;
   }
 });
 
