@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Knighter</title>
+</head>
+
+<body>
+    <div>
+      <p>space for the navbar </p>
+      <!-- SPACE FOR THE NAVBAR  -->
+    </div>  
+    <!-- Publish new twitter (knighter) - Only if the user is loggin   -->
+    <div id="knighter-form">
+      <textarea id="knighter-input" placeholder="What's happening ?"></textarea>
+      <br>
+      <button id="knighter-button">Knighther</button>
+    </div>
+    <!-- wall of most recent knighters published  -->
+        <div id="knightersWall">
+              <h2>KNIGHTER WALL</h2>
+              <ul id="knighter-list">
+                <!-- EJEMPLO DE KNIGHTER(TWEET) -->
+                <div class="knighter">
+                <div class="knighter-header">
+                  <img src="/caballera404.png" alt="Profile picture">
+                  <h3>CABALLERA 404</h3>
+                </div>
+                <p class="knighter-text">ejemplo de knighter</p>
+                <button class="honor-button" data-id="${knighterId}">Honor</button>
+                <span class="honor-count">0</span>
+                </div>
+              </ul>
+        </div>
+    <footer class="bottom">FOOTER
+        <br><br>
+    </footer>
+    <script src="main.js"></script>
+</body>
+
+</html>
