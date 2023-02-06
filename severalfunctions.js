@@ -50,4 +50,9 @@ function validatePassword(password) {
     const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     return emailRegex.test(email);
   }
-  
+  const email = "example@email.com";
+if (validateEmail(email)) {
+  console.log("Email is valid");
+} else {
+  console.error("Email is not valid");
+}
