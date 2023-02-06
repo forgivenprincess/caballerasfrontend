@@ -46,13 +46,37 @@ function validatePassword(password) {
   });
   
 
-  function validateEmail(email) {
-    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    return emailRegex.test(email);
-  }
-  const email = "example@email.com";
-if (validateEmail(email)) {
-  console.log("Email is valid");
-} else {
-  console.error("Email is not valid");
+ /// function validateEmail(email) {
+   ///  const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  ///   return emailRegex.test(email);
+ ///  }
+ ///  const email = "example@email.com";
+/// if (validateEmail(email)) {
+///   console.log("Email is valid");
+/// } else {
+///   console.error("Email is not valid");
+/// }
+
+
+function generatePasswordResetLink(email, token) {
+  return `https://your-website.com/reset-password?email=${encodeURIComponent(email)}&token=${encodeURIComponent(token)}`;
 }
+
+
+function constructPasswordResetEmail(email, link) {
+  return `
+    Hi,
+    
+    We received a request to reset the password for your account. If you did not make this request, you can safely ignore this email.
+    
+    To reset your password, please click the link below:
+    
+    ${link}
+    
+    If the link does not work, you can copy and paste it into your browser's address bar.
+    
+    Thank you,
+    The Support Team
+  `;
+}
+/// nodemailer library for Node.js
