@@ -1,0 +1,32 @@
+body {
+    background-color: darkblue;
+    color: white;
+    font-size: 14pt;
+  }
+  
+  h1, h2, h3, h4, h5 {
+    color: lillac;
+  }  
+
+  .container {
+    background-color: teal;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px;
+  }
+  
+  .btn {
+    background-color: purple;
+    color: white;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin: 20px;
+    font-size: 14pt;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .lillac-text {
+    color: lillac;
+  }
+  
