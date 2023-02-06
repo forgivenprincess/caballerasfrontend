@@ -2,6 +2,7 @@ function validatePassword(password) {
     var pattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
     return pattern.test(password);
   }
+  //input to html
   var password = "Password1@";
   if (validatePassword(password)) {
     console.log("Password is valid");
@@ -34,6 +35,7 @@ function validatePassword(password) {
     }
   }
   
+ //input to html
   const username = "newuser";
   const email = "newuser@example.com";
   checkUsernameAndEmail(username, email).then(result => {
@@ -46,7 +48,8 @@ function validatePassword(password) {
   });
   
 
- /// function validateEmail(email) {
+ ///input to hmtl
+  function validateEmail(email) {
    ///  const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   ///   return emailRegex.test(email);
  ///  }
@@ -55,7 +58,7 @@ function validatePassword(password) {
 ///   console.log("Email is valid");
 /// } else {
 ///   console.error("Email is not valid");
-/// }
+}
 
 
 function generatePasswordResetLink(email, token) {
