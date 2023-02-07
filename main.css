@@ -1,0 +1,80 @@
+/* TO PUBLISH A KNIGHTER (TWEET) */
+
+#knighter-form{
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #e6ecf0;
+    border-radius: 10px;
+    display: flex;
+}
+
+#knighter-input {
+    
+    height: 50px;
+    padding: 5px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    resize: none;
+    margin-right: 30px;
+    flex-grow: 1;
+}
+
+#knighter-button{
+    background-color: #b8088c;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+
+}
+
+/* title wall*/
+#titleWall {
+    display: flex;
+    justify-content: center;
+    color: #FFFFFF;
+   
+    text-shadow: 0 -1px 4px #FFF, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #F00;
+    color: #FFFFFF;
+    
+    }
+
+
+/* KNIGHTERS PUBLISHED*/
+#knighter-list{
+    display: flex;
+    justify-content:center;
+    flex-direction: column;
+    
+
+}
+
+.knighter-container{
+    justify-content:center;
+    width: 500px;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #e6ecf0;
+    border-radius: 10px;
+    color: black;
+    margin: 0 auto;
+    margin: 20px;
+}
+
+.knighter-header{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+
+}
+
+.knighter-header img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 20px;
+  }

@@ -4,7 +4,7 @@ const knighterButton = document.getElementById("knighter-button");
 const knighterInput = document.getElementById("knighter-input");
 const knighterList= document.getElementById("knighter-list");
 
-let isLoggedIn = false; // variable to indicate if the user is logged in or not 
+let isLoggedIn = true; // variable to indicate if the user is logged in or not 
 let knighterId = 0; // Giving an ID to the knighter (tweet)
 
 // if (!isLoggedIn) {
@@ -28,9 +28,9 @@ knighterButton.addEventListener("click", function(){
   const knighter = knighterInput.value ;
   const li = document.createElement("li");
   li.innerHTML = `
-  <div class="knighter">
+  <div class="knighter-container">
   <div class="knighter-header">
-    <img src="image-url-here" alt="Profile picture">
+    <img src="image-url-here" alt="avatar">
     <h3>Username here</h3>
   </div>
   <p class="knighter-text">${knighter}</p>

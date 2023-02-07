@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="main.css">
     <title>Knighter</title>
 </head>
 
@@ -21,19 +22,24 @@
     </div>
     <!-- wall of most recent knighters published  -->
         <div id="knightersWall">
-              <h2>KNIGHTER WALL</h2>
-              <ul id="knighter-list">
+              <h2 id="titleWall">KNIGHTER WALL</h2>
+              <div id="knighter-list">
                 <!-- EJEMPLO DE KNIGHTER(TWEET) -->
-                <div class="knighter">
-                <div class="knighter-header">
-                  <img src="/caballera404.png" alt="Profile picture">
-                  <h3>CABALLERA 404</h3>
+                <div class="knighter-container">
+                  <div class="knighter-header">
+                    <img src="/caballera404.png" alt="avatar">
+                    <h3>CABALLERA 404</h3>
+                    <br>
+                    <p>@caballeraFrustrada - </p>
+                    <p>18h</p>
+                  </div>
+                  <p class="knighter-text">knighter es la mejor aplicación del mundo!!!</p>
+                  <div class="knighter-footer">
+                    <button class="honor-button" data-id="${knighterId}">Honor</button>
+                    <span class="honor-count">3</span>
+                  </div>
                 </div>
-                <p class="knighter-text">ejemplo de knighter</p>
-                <button class="honor-button" data-id="${knighterId}">Honor</button>
-                <span class="honor-count">0</span>
-                </div>
-              </ul>
+              </div>
         </div>
     <footer class="bottom">FOOTER
         <br><br>
