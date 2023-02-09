@@ -9,23 +9,27 @@
 </head>
 
 <body>
+    <nav>
+        <div class="logo">
+          <img src="logo.png" alt="Logo">
+        </div>
+        <form>
+          <input type="text" placeholder="Search">
+        </form>
+        <button id="login-btn">Login</button>
+        <button id="settings-btn">Settings</button>
+      </nav>      
     <div>
         <h2>Knigther</h2>
     </div>
     <div class="container">
         <h3>Log into your account</h3>
-        <form id="form">
-            <div class="form-control">
-                <label for="text">Username</label>
-                <input type="text" id="text" placeholder="Enter username..." />
-            </div>
-            <form id="form">
-                <div class="form-control">
-                    <label for="text">Password</label>
-                    <input type="text" id="text" placeholder="Enter password..." />
-                </div>
-                <button class="btn">Log in</button>
-            </form>
+        <form id="login-form">
+            <input type="text" id="username-input" placeholder="Username">
+            <input type="password" id="password-input" placeholder="Password">
+            <button type="submit">Login</button>
+            <p id="error-message"></p>
+        </form>
             <h5> <a=XYZ>Don't have an account yet? Sig in!</a></h5>
     </div>
     </div>
