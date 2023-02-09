@@ -16,13 +16,8 @@ form.addEventListener("submit", event => {
   }
 });
 
-//HTML:
-//<button id="example-btn">Settings</button>
+const settingsBtn = document.getElementById("settings-btn");
 
-//Javascript
-//const exampleBtn = document.getElementById("example-btn");
-
-//if (!loggedIn) {
- // exampleBtn.style.display = "none";
-//}
-
+if (!loggedIn) {
+  settingsBtn.style.display = "none";
+}
