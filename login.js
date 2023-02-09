@@ -15,3 +15,14 @@ form.addEventListener("submit", event => {
     errorMessage.textContent = "Invalid username or password.";
   }
 });
+
+//HTML:
+//<button id="example-btn">Settings</button>
+
+//Javascript
+//const exampleBtn = document.getElementById("example-btn");
+
+//if (!loggedIn) {
+ // exampleBtn.style.display = "none";
+//}
+
