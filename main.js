@@ -1,10 +1,13 @@
+//<button id="settings-btn">Settings</button>  <script> const settingsBtn = document.getElementById("settings-btn");  if (!loggedIn) {   settingsBtn.style.display = "none"; } </script>
+
+
 //conectar la api
 
-const url = 'http://127.0.0.1:3000/api/';
-const HTML_response = document.getElementById('app')
-fetch(url)
-.then((resp) => resp.json())
-.then((data) => console.log(data))
+// const url = 'http://127.0.0.1:3000/api/';
+// const HTML_response = document.getElementById('app')
+// fetch(url)
+// .then((resp) => resp.json())
+// .then((data) => console.log(data))
 
 
 
@@ -17,7 +20,7 @@ let newFollowButton = document.querySelector(".knighter-footer .followButton");
 
 
 let isLoggedIn = true; // variable to indicate if the user is logged in or not 
-let knighterId = 0; // Giving an ID to the knighter (tweet)
+
 
 
 //function to update the login season variable
@@ -44,47 +47,48 @@ knighterButton.addEventListener("click", function(){
     return;
   }
   const knighter = knighterInput.value ;
-  const date = new Date();
+  // const date = new Date();
   //const dateString = date.toLocaleString();
   const li = document.createElement("li");
   li.innerHTML = `
   <div class="knighter-container">
   <div class="knighter-header">
-    <img src="image-url-here" alt="avatar">
-    <h3>Username here</h3>
+  <h3>bbb</h3>
   </div>
   <p class="knighter-text">${knighter}</p>
-  <button class="honor-button" data-id="${knighterId}">Honor</button>
+  <button class="honor-button">Honor</button>
   <span class="honor-count">0</span>
   <button class="followButton">Follow me!</button>
   </div>
-`;
+  `;
   knighterList.prepend(li);
-  knighterId++;
+  
+  const usuario = "Gabriela";
+  const url = 'http://127.0.0.1:3000/api/listadeposts?' + new URLSearchParams({usuario:usuario,texto:knighter,imagen:"img"});
+  fetch(url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    }})
+  .then((resp) => resp.json())
+  .then((data) => console.log(data))
+  .catch((error) => {
+    console.error("Error connecting to the server");
+  });
 })
 
 // connecting the publishing to the API
-fetch("http://127.0.0.1:3000/api/", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json"
-  },
-  body: JSON.stringify({   
-    // usuario: "Username here",
-    texto: knighterInput.value,
-    fecha: new Date(),
-    // imagen: "imageProfile"
-}) })
-.then((response) => {
-  if (response.status === 201) {
-    console.log("Knighter published successfully");
-  } else {
-    console.error("Error publishingthe knighter");
-  }
-})
-.catch((error) => {
-  console.error("Error connecting to the server");
-});
+//   // // body: JSON.stringify({   
+//   // //   texto: knighterInput.value,
+//   // //   imagen: "imageProfile"
+// }) 
+// .then((response) => {
+//   if (response.status === 201) {
+//     console.log("Knighter published successfully");
+//   } else {
+//     console.error("Error publishingthe knighter");
+//   }
+// })
 
 
 

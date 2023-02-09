@@ -12,13 +12,21 @@
   <body>
     <div id="app"></div>
     <div>
-      <p>space for the navbar </p>
-      <!-- SPACE FOR THE NAVBAR  -->
+      <nav>
+        <div class="logo">
+          <img src="logo.png" alt="Logo" onclick="window.location.href='main.html'">
+        </div>
+        <form>
+          <input type="text" placeholder="Search">
+        </form>
+        <button id="login-btn" onclick="window.location.href='login.html'">Login</button>
+        <button id="settings-btn">Settings</button>
+      </nav>    
     </div>  
     <!-- Publish new twitter (knighter) - Only if the user is loggin   -->
     <div id="knighter-form">
       <img src="/caballera404.png" alt="avatar">
-      <textarea id="knighter-input" placeholder="What's happening ?"></textarea>
+      <textarea id="knighter-input" placeholder="What's happening ?" name="texto"></textarea>
       <br>
       <button id="knighter-button">Knighther</button>
     </div>
