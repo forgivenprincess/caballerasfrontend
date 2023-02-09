@@ -11,6 +11,13 @@
     margin:30px;
 }
 
+#knighter-form img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 20px;
+  }
+
 #knighter-input { 
     height: 50px;
     padding: 5px;
@@ -40,7 +47,7 @@
     background-color:teal;
     background-size: cover;
     text-align: center;
-    padding: 50px;
+    padding: 10px;
     color: white;
     margin: 30px;
     border-radius: 10px;
@@ -63,36 +70,40 @@ ul {
   }
   
   li {
-    display: inline-block;
+    display:flex;
+    justify-content: center;
   }
 
 
-#knighter-list{
+#knightersWall{
     display: flex;
-    justify-content:center;
-    flex-direction: column;
-    
+    justify-content: center;
+    flex-direction: column
 
 }
 
 .knighter-container{
-    justify-content:center;
-    width: 500px;
     padding: 20px;
+    width: 60%;
     background-color: #ffffff;
     border: 1px solid #e6ecf0;
     border-radius: 10px;
     color: black;
     margin: 0 auto;
     margin: 20px;
+    overflow-wrap: break-word;
+    text-overflow: ellipsis;
 }
 
 .knighter-header{
     display: flex;
     align-items: center;
+    
     margin-bottom: 20px;
 
 }
+
+
 
 .knighter-header img {
     width: 50px;
@@ -100,6 +111,9 @@ ul {
     border-radius: 50%;
     margin-right: 20px;
   }
+
+
+
 
 .honor-button{
     background-color: purple;
@@ -123,4 +137,20 @@ ul {
     font-size: 14pt;
     text-align: center;
     cursor: pointer;
+}
+
+/* RESPONSIVE*/
+
+@media (max-width: 600px) {
+  .knighter-header img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 400px) {
+  .knighter-header img {
+    width: 30px;
+    height: 30px;
+  }
 }

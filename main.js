@@ -5,11 +5,6 @@ const HTML_response = document.getElementById('app')
 fetch(url)
 .then((resp) => resp.json())
 .then((data) => console.log(data))
-.then((data) => {
-  const knighters = data;
-  let knightertList = `${knighters} +++++`;
-  HTML_response.innerHTML = knightertList;
-});
 
 
 
@@ -21,7 +16,7 @@ let newFollowButton = document.querySelector(".knighter-footer .followButton");
 
 
 
-let isLoggedIn = false; // variable to indicate if the user is logged in or not 
+let isLoggedIn = true; // variable to indicate if the user is logged in or not 
 let knighterId = 0; // Giving an ID to the knighter (tweet)
 
 
@@ -68,7 +63,34 @@ knighterButton.addEventListener("click", function(){
   knighterId++;
 })
 
+// connecting the publishing to the API
+fetch("http://127.0.0.1:3000/api/", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({   
+    // usuario: "Username here",
+    texto: knighterInput.value,
+    fecha: new Date(),
+    // imagen: "imageProfile"
+}) })
+.then((response) => {
+  if (response.status === 201) {
+    console.log("Knighter published successfully");
+  } else {
+    console.error("Error publishingthe knighter");
+  }
+})
+.catch((error) => {
+  console.error("Error connecting to the server");
+});
+
+
+
+
 //aadding and event giving a like (honor) for the knighters
+// and connecting to give an honor to the API 
 
 knighterList.addEventListener("click", function(event) {
   if (event.target.className === "honor-button") {
@@ -79,6 +101,23 @@ knighterList.addEventListener("click", function(event) {
     if (event.target.innerHTML === "Honor") {
       count++;
       event.target.innerHTML = "HONOR!";
+      fetch("/api/honors", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          id: knighterId,
+          count: count
+        })
+      })
+        .then(res => res.json())
+        .then(data => {
+          console.log(data);
+        })
+        .catch(error => {
+          console.error(error);
+        });
     } else {
       count--;
       event.target.innerHTML = "Honor";
