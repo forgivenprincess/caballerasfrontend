@@ -1,23 +1,11 @@
 //<button id="settings-btn">Settings</button>  <script> const settingsBtn = document.getElementById("settings-btn");  if (!loggedIn) {   settingsBtn.style.display = "none"; } </script>
 
 
-//conectar la api
-
-// const url = 'http://127.0.0.1:3000/api/';
-// const HTML_response = document.getElementById('app')
-// fetch(url)
-// .then((resp) => resp.json())
-// .then((data) => console.log(data))
-
-
-
 const knighterButton = document.getElementById("knighter-button");
 const knighterInput = document.getElementById("knighter-input");
 const knighterList= document.getElementById("knighter-list");
 const followButton = document.getElementById("followButton")
-let newFollowButton = document.querySelector(".knighter-footer .followButton");
-
-
+let newFollowButton = document.querySelector(".knighter-footer.followButton");
 
 let isLoggedIn = true; // variable to indicate if the user is logged in or not 
 
@@ -38,22 +26,52 @@ const postingKnighters = async() =>{
   fetch("")
 }
 
+//DRAW THE KNIGHTERS FROM THE API
+const url = 'http://127.0.0.1:3000/api/listadeposts' 
+fetch(url)
+  .then(response => response.json())
+  .then(data => {
+let postHTML = [];
+for (const i of data.listado) {
+  postHTML += `
+    <div class="knighter-container">
+      <div class="knighter-header">
+        <img src="/caballera404.png" alt="avatar">
+        <h3>${i.usuario}</h3>
+        <br>
+        <p class="knighter-date">${i.fecha}</p>
+      </div>
+      <p class="knighter-text">${i.texto}</p>
+      <div class="knighter-footer">
+        <button class="honor-button" data-id="${i._id}">Honor</button>
+        <span class="honor-count">0</span>
+        <button class="followButton">Follow</button>
+      </div>
+    </div>` 
+  document.getElementById('knighter-list').innerHTML = postHTML;
+  }})
 
 
-//adding an event to the button for publishing a knighter
+// document.getElementById("knighter-list").innerHTML = postHTML;
+
+
+
+
+
+
+//PUBLISH A KNIGHTER
+//adding an event to the button for publishing a knighter and conecting with the API
 knighterButton.addEventListener("click", function(){
-  if (!isLoggedIn){ //if is logged 
+  if (!isLoggedIn){ 
     alert ("Please , you have to login before publish a knighter!");
     return;
   }
   const knighter = knighterInput.value ;
-  // const date = new Date();
-  //const dateString = date.toLocaleString();
   const li = document.createElement("li");
   li.innerHTML = `
   <div class="knighter-container">
   <div class="knighter-header">
-  <h3>bbb</h3>
+  <h3>{usuario}</h3> //hay que poner el usuario
   </div>
   <p class="knighter-text">${knighter}</p>
   <button class="honor-button">Honor</button>
@@ -62,7 +80,7 @@ knighterButton.addEventListener("click", function(){
   </div>
   `;
   knighterList.prepend(li);
-  
+
   const usuario = "Gabriela";
   const url = 'http://127.0.0.1:3000/api/listadeposts?' + new URLSearchParams({usuario:usuario,texto:knighter,imagen:"img"});
   fetch(url, {
@@ -77,23 +95,9 @@ knighterButton.addEventListener("click", function(){
   });
 })
 
-// connecting the publishing to the API
-//   // // body: JSON.stringify({   
-//   // //   texto: knighterInput.value,
-//   // //   imagen: "imageProfile"
-// }) 
-// .then((response) => {
-//   if (response.status === 201) {
-//     console.log("Knighter published successfully");
-//   } else {
-//     console.error("Error publishingthe knighter");
-//   }
-// })
 
 
-
-
-//aadding and event giving a like (honor) for the knighters
+//adding and event giving a like (honor) for the knighters
 // and connecting to give an honor to the API 
 
 knighterList.addEventListener("click", function(event) {
