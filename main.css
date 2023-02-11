@@ -84,13 +84,14 @@ ul {
 
 .knighter-container{
     padding: 20px;
-    width: 60%;
+    width: 50%;
     background-color: #ffffff;
     border: 1px solid #e6ecf0;
     border-radius: 10px;
     color: black;
-    margin: 0 auto;
-    margin: 20px;
+    margin:auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
     overflow-wrap: break-word;
     text-overflow: ellipsis;
 }
